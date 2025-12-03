@@ -22,8 +22,8 @@ function toggleCode(button) {
   if (content.classList.contains("is-expanded")) {
     button.textContent = "[ - ] Masquer le code";
   } else {
-    // Rétablit le [+] et la description stockée
-    button.textContent = "[ + ] " + button.originalDescription;
+    // Rétablit le [+] et la description stockée button.textContent = "[ + ] " + button.originalDescription;
+    button.textContent = button.originalDescription;
   }
 }
 
@@ -178,7 +178,7 @@ function runPage3Examples() {
 
   // 4. Modifier href (Lien)
   setTimeout(() => {
-    lienCible.href = "https://https://iut-beziers.edu.umontpellier.fr/";
+    lienCible.href = "https://iut-beziers.edu.umontpellier.fr/";
     lienCible.textContent = "Lien vers iut de béziers (modifié)";
     console.log("4. Attribut HREF du lien modifié.");
   }, 5000);

@@ -224,7 +224,7 @@ code {
   font-weight: 700;
   color: #ffffff;
   background-color: #000000;
-  font-size: 20px;
+  font-size: 22px;
   font-family: monospace;
   padding: 2px 6px;
   border-radius: 4px;
@@ -237,7 +237,8 @@ pre code {
   background-color: #000000;
   padding: 4px 8px;
   border-radius: 4px;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: normal;
 }
 
 /* --- STYLES PÉDAGOGIQUES POUR BLOCS DE CODE DÉPLIABLES --- */
@@ -255,11 +256,17 @@ pre code {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease-out; /* Animation douce */
-
+  font-size: 18px;
   /* Style visuel du bloc de code (barre latérale bleue) */
   padding: 0 15px 0 15px;
   border-left: 5px solid #007bff; /* Barre VScode / Accentuation */
   font-family: monospace;
+}
+.code-content p,
+.code-content strong {
+  /* Exemple : taille de police pour le texte normal des indices */
+  font-size: 1.15em;
+  line-height: 1.5; /* Améliore la lisibilité */
 }
 
 /* 2. Style du bouton de bascule */
@@ -273,6 +280,7 @@ pre code {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 20px;
   color: #007bff;
   transition: background-color 0.2s;
 }
