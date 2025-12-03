@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6. L'Interactivité : Les Écouteurs d'Événements</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #event-btn {
+        padding: 10px 20px;
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .dark-mode-site {
+        background-color: #2c3e50;
+        color: white;
+      }
+      code {
+        font-size: 1.1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>6. 🖱️ L'Interactivité : Les Écouteurs d'Événements</h1>
+        <p>
+          La fonction <em>addEventListener</em> permet de donner vie à votre
+          page en réagissant aux actions de l'utilisateur.
+        </p>
+      </header>
+
+      <hr />
+
+      <section id="demo">
+        <h2>Exemple Fonctionnel</h2>
+        <button id="event-btn">Cliquez-moi pour le Mode Sombre !</button>
+        <p>Tentez de taper dans le champ ci-dessous :</p>
+        <input
+          type="text"
+          id="input-field-event"
+          placeholder="Taper ici..."
+          style="padding: 5px"
+        />
+        <p id="scroll-feedback">Faites défiler cette zone.</p>
+        <button onclick="runPage6Examples()">
+          Lancer la Démo des Événements
+        </button>
+      </section>
+
+      <hr />
+
+      <section id="event-listener">
+        <h2>6.1 Syntaxe et Événements Courants</h2>
+        <p>
+          La syntaxe de base est :
+          <em>element.addEventListener('type_event', fonction_a_executer);</em>
+        </p>
+
+        <!-- Indice 1 : addEventListener (Click) -->
+        <div class="code-step">
+          <button class="toggle-button-code" onclick="toggleCode(this)">
+            [ + ] Indice : Réagir au 'click'
+          </button>
+          <div class="code-content">
+            <p>
+              <strong>Objectif :</strong> Basculer la classe
+              <em>.dark-mode-site</em> sur le <em>body</em> lorsque
+              l'utilisateur clique sur le bouton <em>#event-btn</em>.
+            </p>
+            <pre><code>const btn = document.querySelector('#event-btn');
+
+btn.addEventListener('click', function() {
+    // La fonction 'toggle' est idéale pour basculer les états
+    document.body.classList.toggle('dark-mode-site');
+    console.log("Le mode sombre a été basculé.");
+});</code></pre>
+          </div>
+        </div>
+
+        <!-- Indice 2 : Événement 'input' -->
+        <div class="code-step">
+          <button class="toggle-button-code" onclick="toggleCode(this)">
+            [ + ] Indice : Événement de saisie ('input')
+          </button>
+          <div class="code-content">
+            <p>
+              <strong>Objectif :</strong> Afficher chaque frappe de
+              l'utilisateur en temps réel dans la console (événement
+              <em>input</em>).
+            </p>
+            <pre><code>const input = document.querySelector('#input-field-event');
+
+input.addEventListener('input', function(e) {
+    console.log("Vous avez tapé : " + e.target.value);
+});</code></pre>
+          </div>
+        </div>
+
+        <!-- Indice 3 : Événement 'scroll' -->
+        <div class="code-step">
+          <button class="toggle-button-code" onclick="toggleCode(this)">
+            [ + ] Indice : Réagir au défilement ('scroll')
+          </button>
+          <div class="code-content">
+            <p>
+              <strong>Objectif :</strong> Détecter le défilement dans le
+              <em>window</em> (ou un élément spécifique) pour un effet de type
+              "parallax" ou "scroll spy".
+            </p>
+            <pre><code>window.addEventListener('scroll', function() {
+    console.log("Page défilée à la position Y : " + window.scrollY);
+});</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <div class="menu-buttons">
+        <div class="back-to-menu">
+          <a href="page_5.html">← Partie précédente (Création d'éléments)</a>
+        </div>
+        <div class="back-to-menu">
+          <a href="index.html">↑ Retour au Menu du TD</a>
+        </div>
+      </div>
+
+      <footer>
+        <p style="text-align: center; font-size: 0.9em; color: #666">
+          © 2025 — BUT MMI Béziers - Référence DOM<br />
+        </p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

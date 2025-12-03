@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. Manipuler le Style (CSS)</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #target-style {
+        padding: 30px;
+        margin: 20px 0;
+        border: 2px solid #3498db;
+        transition: all 0.5s;
+        text-align: center;
+        font-weight: bold;
+      }
+      .dark-mode {
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+        border-color: #3498db;
+      }
+      .large-font {
+        font-size: 24px;
+        padding-top: 50px;
+      }
+      code {
+        font-size: 1.1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>4. 🎨 Manipuler le Style (CSS)</h1>
+        <p>
+          Il existe deux méthodes pour modifier l'apparence : le style en ligne
+          (<em>style.prop</em>) et l'ajout/retrait de classes
+          (<em>classList</em>), méthode préférée.
+        </p>
+      </header>
+
+      <hr />
+
+      <section id="demo">
+        <h2>Exemple Fonctionnel</h2>
+        <div id="target-style">Élément cible de manipulation de style.</div>
+        <button onclick="runPage4Examples()">Lancer la Démo de Style</button>
+      </section>
+
+      <hr />
+
+      <section id="inline-style">
+        <h2>4.1 La propriété .style (Style en ligne)</h2>
+        <p>
+          Cela ajoute du style directement dans la balise HTML (`&lt;div
+          style="..."&gt;`). **Rappel :** Les propriétés CSS avec des tirets
+          doivent être écrites en <em>camelCase</em> en JavaScript (ex:
+          <em>background-color</em> devient <em>backgroundColor</em>).
+        </p>
+
+        <!-- Indice 1 : style.backgroundColor -->
+        <div class="code-step">
+          <button class="toggle-button-code" onclick="toggleCode(this)">
+            [ + ] Indice : Modification du style en CamelCase
+          </button>
+          <div class="code-content">
+            <p>
+              <strong>Objectif :</strong> Changer la couleur de fond de
+              l'élément cible.
+            </p>
+            <pre><code>const box = document.querySelector('#target-style');
+// Notez le 'C' majuscule :
+box.style.backgroundColor = "tomato";</code></pre>
+          </div>
+        </div>
+
+        <!-- Indice 2 : style.display -->
+        <div class="code-step">
+          <button class="toggle-button-code" onclick="toggleCode(this)">
+            [ + ] Indice : Cacher l'élément
+          </button>
+          <div class="code-content">
+            <p><strong>Objectif :</strong> Cacher l'élément cible.</p>
+            <pre><code>box.style.display = "none"; // L'élément disparaît</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section id="classlist">
+        <h2>4.2 La propriété .classList (Recommandé)</h2>
+        <p>
+          C'est la méthode la plus propre : on ajoute ou retire des classes CSS
+          définies dans votre fichier <em>.css</em>.
+        </p>
+
+        <!-- Indice 3 : classList.add, remove -->
+        <div class="code-step">
+          <button class="toggle-button-code" onclick="toggleCode(this)">
+            [ + ] Indice : Ajouter/Retirer une classe
+          </button>
+          <div class="code-content">
+            <p>
+              <strong>Objectif :</strong> Ajouter la classe <em>.large-font</em>
+              puis la retirer.
+            </p>
+            <pre><code>const box = document.querySelector('#target-style');
+// Ajoute la classe
+box.classList.add('large-font');
+// Retire la classe
+box.classList.remove('large-font');</code></pre>
+          </div>
+        </div>
+
+        <!-- Indice 4 : classList.toggle -->
+        <div class="code-step">
+          <button class="toggle-button-code" onclick="toggleCode(this)">
+            [ + ] Indice : Basculer un état (toggle)
+          </button>
+          <div class="code-content">
+            <p>
+              <strong>Objectif :</strong> Utiliser <em>toggle</em> pour basculer
+              le mode sombre (<em>.dark-mode</em>) à chaque appel.
+            </p>
+            <pre><code>// S'il y est, il est retiré. S'il n'y est pas, il est ajouté.
+box.classList.toggle('dark-mode');</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <div class="menu-buttons">
+        <div class="back-to-menu">
+          <a href="page_3.html">← Partie précédente (Contenu et Attributs)</a>
+        </div>
+        <div class="back-to-menu">
+          <a href="page_5.html"
+            >→ Partie suivante (Créer et Ajouter des éléments)</a
+          >
+        </div>
+      </div>
+
+      <footer>
+        <p style="text-align: center; font-size: 0.9em; color: #666">
+          © 2025 — BUT MMI Béziers - Référence DOM<br />
+        </p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Sélectionner des éléments</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <style>
+      /* Styles pour la démonstration */
+      #demo-box {
+        border: 2px solid #007bff;
+        padding: 15px;
+        margin: 15px 0;
+      }
+      .card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 5px;
+      }
+      .highlight-js {
+        background-color: #ffeb3b;
+      }
+      code {
+        font-size: 1.1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>2. 🔎 Sélectionner des éléments (Le "Grappin")</h1>
+        <p>
+          Avant de modifier quoi que ce soit, il faut dire à JavaScript quel
+          élément vous ciblez. C'est la fonction des méthodes de sélection.
+        </p>
+      </header>
+
+      <hr />
+
+      <section id="demo">
+        <h2>Exemple Fonctionnel</h2>
+        <div id="demo-box">
+          <p id="first-p">Ceci est le premier paragraphe.</p>
+          <h3 id="titre-principal">Titre Principal</h3>
+          <button class="bouton-action">Bouton 1</button>
+          <button class="bouton-action">Bouton 2</button>
+        </div>
+        <button onclick="runPage2Examples()">
+          Lancer la Démo de Sélection
+        </button>
+      </section>
+
+      <hr />
+
+      <section id="single-selection">
+        <h2>2.1 Sélectionner un seul élément</h2>
+        <p>
+          La méthode <em>querySelector</em> retourne le
+          <strong>premier</strong> élément qui correspond au sélecteur CSS
+          donné.
+        </p>
+
+        <!-- Indice 1 : querySelector (ID) -->
+        <div class="code-step">
+          <button class="toggle-button-code" onclick="toggleCode(this)">
+            [ + ] Indice : Sélection par ID (#) et querySelector
+          </button>
+          <div class="code-content">
+            <p>
+              <strong>Objectif :</strong> Sélectionner l'élément avec l'ID
+              "titre-principal".
+            </p>
+            <pre><code>// Rappel : Utilisez le dièse (#) pour cibler un ID
+const monTitre = document.querySelector('#titre-principal');
+// Une fois sélectionné, vous pouvez le manipuler :
+monTitre.textContent = "Titre SÉLECTIONNÉ !";</code></pre>
+          </div>
+        </div>
+
+        <!-- Indice 2 : querySelector (Classe) -->
+        <div class="code-step">
+          <button class="toggle-button-code" onclick="toggleCode(this)">
+            [ + ] Indice : Sélection du PREMIER élément par Classe (.)
+          </button>
+          <div class="code-content">
+            <p>
+              <strong>Objectif :</strong> Sélectionner le premier bouton ayant
+              la classe "bouton-action".
+            </p>
+            <pre><code>// Rappel : Utilisez le point (.) pour cibler une classe
+const monBouton = document.querySelector('.bouton-action');
+monBouton.style.backgroundColor = 'blue';</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section id="multiple-selection">
+        <h2>2.2 Sélectionner plusieurs éléments</h2>
+        <p>
+          La méthode <em>querySelectorAll</em> retourne une
+          <strong>liste (<em>NodeList</em>)</strong> de tous les éléments
+          correspondants. Pour agir sur chacun, il faut souvent utiliser une
+          boucle (<em>forEach</em>).
+        </p>
+
+        <!-- Indice 3 : querySelectorAll (Boucle) -->
+        <div class="code-step">
+          <button class="toggle-button-code" onclick="toggleCode(this)">
+            [ + ] Indice : Sélection et itération (forEach)
+          </button>
+          <div class="code-content">
+            <p>
+              <strong>Objectif :</strong> Sélectionner TOUS les éléments ayant
+              la classe "bouton-action" et les modifier.
+            </p>
+            <pre><code>// NodeList :
+const tousLesBoutons = document.querySelectorAll('.bouton-action');
+
+// Itération :
+tousLesBoutons.forEach((bouton) => {
+    bouton.style.fontSize = '1.2em'; // Applique la taille à tous
+});</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <div class="menu-buttons">
+        <div class="back-to-menu">
+          <a href="page_1.html">← Partie précédente (Qu'est-ce que le DOM ?)</a>
+        </div>
+        <div class="back-to-menu">
+          <a href="page_3.html">→ Partie suivante (Contenu et Attributs)</a>
+        </div>
+      </div>
+
+      <footer>
+        <p style="text-align: center; font-size: 0.9em; color: #666">
+          © 2025 — BUT MMI Béziers - Référence DOM<br />
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

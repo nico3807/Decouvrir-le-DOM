@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Qu'est-ce que le DOM ?</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      code {
+        font-size: 1.1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>1. 🌲 Qu'est-ce que le DOM ?</h1>
+        <p>
+          Le DOM (Document Object Model) est l'interface qui permet à JavaScript
+          de lire et de modifier votre document HTML.
+        </p>
+      </header>
+
+      <hr />
+
+      <section id="definition">
+        <h2>Le DOM : La Maquette Interactive</h2>
+        <p>
+          Imaginez que votre code HTML est le plan d'une maison. Le navigateur,
+          en lisant ce plan, construit une <strong>maquette en 3D</strong> de la
+          maison en mémoire. Le DOM, c'est cette maquette.
+        </p>
+        <p>Grâce au DOM, JavaScript peut :</p>
+        <ul>
+          <li>Accéder à n'importe quel élément de la page.</li>
+          <li>Modifier la structure, le style ou le contenu.</li>
+          <li>Réagir aux actions de l'utilisateur (clics, saisies, etc.).</li>
+        </ul>
+      </section>
+
+      <hr />
+
+      <section id="tree-analogy">
+        <h2>L'analogie de l'Arbre (Tree Structure)</h2>
+        <p>
+          Le navigateur voit votre page comme une
+          <strong>structure en arbre</strong>. Chaque balise HTML devient un
+          <strong>Nœud</strong> (Node) ou un <strong>Élément</strong>.
+        </p>
+        <p>Quelques relations clés :</p>
+        <ul>
+          <li><code>document</code> est la racine (le point de départ).</li>
+          <li>
+            <code>&lt;body&gt;</code> est un enfant de
+            <code>&lt;html&gt;</code>.
+          </li>
+          <li>
+            <code>&lt;h1&gt;</code> et <code>&lt;p&gt;</code> sont des enfants
+            de <code>&lt;body&gt;</code> et des "frères" (<em>siblings</em>)
+            entre eux.
+          </li>
+        </ul>
+      </section>
+      <img src="Analogie_de_l_Arbre.png" style="margin: 15px 0" />
+
+      <hr />
+
+      <div class="menu-buttons">
+        <div class="back-to-menu">
+          <a href="index.html">↑ Retour au Menu du TD</a>
+        </div>
+        <div class="back-to-menu">
+          <a href="page_2.html">→ Partie suivante (Sélection des éléments)</a>
+        </div>
+      </div>
+
+      <footer>
+        <p style="text-align: center; font-size: 0.9em; color: #666">
+          © 2025 — BUT MMI Béziers - Référence DOM<br />
+        </p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

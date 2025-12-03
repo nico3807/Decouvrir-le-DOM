@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Modifier le contenu et les attributs</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #target-box {
+        border: 2px solid #f39c12;
+        padding: 15px;
+        margin: 15px 0;
+        min-height: 80px;
+        background-color: #fff8e1;
+      }
+      code {
+        font-size: 1.1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>3. ✍️ Modifier le contenu et les attributs</h1>
+        <p>
+          Apprenez à différencier le contenu textuel du HTML et à manipuler les
+          propriétés des balises (<em>src</em>, <em>href</em>, <em>alt</em>).
+        </p>
+      </header>
+
+      <hr />
+
+      <section id="demo">
+        <h2>Exemple Fonctionnel</h2>
+        <div id="target-box">
+          <p>Ceci est un paragraphe avec <strong>HTML</strong>.</p>
+        </div>
+        <a href="https://www.umontpellier.fr/" id="lien-cible"
+          >Lien initial (Site de l'UM)</a
+        >
+        <img
+          id="image-cible"
+          src="logo_MMI_Beziers.jpg"
+          alt="Image initiale"
+          style="margin: 15px 0"
+        />
+        <button onclick="runPage3Examples()">
+          Lancer la Démo de Modification
+        </button>
+      </section>
+
+      <hr />
+
+      <section id="content-modification">
+        <h2>3.1 Changer le texte ou le HTML</h2>
+        <p>
+          La différence entre <em>textContent</em> et <em>innerHTML</em> est
+          fondamentale pour votre sécurité et votre performance.
+        </p>
+
+        <!-- Indice 1 : textContent -->
+        <div class="code-step">
+          <button class="toggle-button-code" onclick="toggleCode(this)">
+            [ + ] Indice : Utiliser textContent (Texte brut)
+          </button>
+          <div class="code-content">
+            <p>
+              <strong>Objectif :</strong> Remplacer le contenu du paragraphe
+              dans la boîte cible, en ne gardant que le texte.
+            </p>
+            <pre><code>// Sélectionnez votre élément au préalable :
+const boite = document.querySelector('#target-box');
+// Remplacement du contenu par du texte brut (le &lt;strong&gt; disparaît) :
+boite.textContent = "Contenu sans formatage HTML.";</code></pre>
+          </div>
+        </div>
+
+        <!-- Indice 2 : innerHTML -->
+        <div class="code-step">
+          <button class="toggle-button-code" onclick="toggleCode(this)">
+            [ + ] Indice : Utiliser innerHTML (Avec balises)
+          </button>
+          <div class="code-content">
+            <p>
+              <strong>Objectif :</strong> Remplacer le contenu de la boîte cible
+              en y insérant un nouveau paragraphe avec une balise.
+            </p>
+            <pre><code>// Remplacement du contenu par du nouveau HTML :
+boite.innerHTML = "&lt;p&gt;Nouveau &lt;strong&gt;contenu HTML&lt;/strong&gt; inséré !&lt;/p&gt;";</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section id="attribute-modification">
+        <h2>3.2 Changer les attributs (src, href, alt...)</h2>
+        <p>
+          Vous pouvez lire ou modifier les attributs d'une balise HTML
+          (propriétés du DOM) directement via JavaScript.
+        </p>
+
+        <!-- Indice 3 : Modifier src et alt -->
+        <div class="code-step">
+          <button class="toggle-button-code" onclick="toggleCode(this)">
+            [ + ] Indice : Modification de la source d'une image
+          </button>
+          <div class="code-content">
+            <p>
+              <strong>Objectif :</strong> Changer la source (<em>src</em>) et la
+              description accessible (<em>alt</em>) de l'image cible.
+            </p>
+            <pre><code>const image = document.querySelector('#image-cible');
+// Modifier la source :
+image.src = "https://via.placeholder.com/100x100/5E35B1/ffffff?text=NEW";
+// Modifier l'attribut alt :
+image.alt = "Nouvelle image de démonstration.";</code></pre>
+          </div>
+        </div>
+
+        <!-- Indice 4 : Modifier href -->
+        <div class="code-step">
+          <button class="toggle-button-code" onclick="toggleCode(this)">
+            [ + ] Indice : Modification d'un lien (href)
+          </button>
+          <div class="code-content">
+            <p>
+              <strong>Objectif :</strong> Modifier la destination
+              (<em>href</em>) du lien cible.
+            </p>
+            <pre><code>const lien = document.querySelector('#lien-cible');
+// Modifier le lien :
+lien.href = "https://mmi.fr";</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <div class="menu-buttons">
+        <div class="back-to-menu">
+          <a href="page_2.html">← Partie précédente (Sélection)</a>
+        </div>
+        <div class="back-to-menu">
+          <a href="page_4.html">→ Partie suivante (Manipuler le Style)</a>
+        </div>
+      </div>
+
+      <footer>
+        <p style="text-align: center; font-size: 0.9em; color: #666">
+          © 2025 — BUT MMI Béziers - Référence DOM<br />
+        </p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
